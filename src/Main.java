@@ -1,4 +1,5 @@
-import creational.MoSingleton;
+import creational.singleton.Logger;
+import creational.singleton.MoSingleton;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -16,5 +17,9 @@ public class Main {
         }
         // Call the showMessage method
         singleton.showMessage();
+
+        // Call the log method
+        Logger logger = Logger.getInstance();
+        logger.log("This is a log message.");
     }
 }
