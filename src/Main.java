@@ -1,15 +1,20 @@
+import creational.MoSingleton;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Create a new instance of MoSingleton
+        MoSingleton singleton = MoSingleton.getInstance();
+        MoSingleton singletonCopy = MoSingleton.getInstance();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        // Check if both instances are the same
+        if (singleton == singletonCopy) {
+            System.out.println("Both instances are the same.");
+        } else {
+            System.out.println("Instances are different.");
         }
+        // Call the showMessage method
+        singleton.showMessage();
     }
 }
